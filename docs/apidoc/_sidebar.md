@@ -1,0 +1,51 @@
+- **接口公共说明**
+  - [通用接口协议](/apidoc/common/common.md)
+  - [自定义搜索协议](/apidoc/common/search.md)
+  - [事件类型](/apidoc/common/event.md)
+- **项目/仓库**
+  - [项目接口](/apidoc/repo/project.md)
+  - [仓库接口](/apidoc/repo/repository.md)
+  - [代理源接口](/apidoc/repo/proxy-channel.md)
+  - [仓库同步接口](/apidoc/repo/replication.md)
+- **节点**
+  - [节点操作接口](/apidoc/node/node.md)
+  - [分享链接接口](/apidoc/node/share.md)
+- **制品包/版本**
+  - [制品包版本接口](/apidoc/package/package.md)
+  - [制品stage接口](/apidoc/package/stage.md)
+- **元数据**
+  - [系统元数据说明](/apidoc/metadata/system-metadata.md)
+  - [节点元数据](/apidoc/metadata/node-metadata.md)
+  - [包版本元数据](/apidoc/metadata/package-version-metadata.md)
+  - [元数据标签](/apidoc/metadata/label.md)
+  - [元数据搜索](/apidoc/metadata/search.md)
+- **Generic通用制品仓库**
+  - [简单文件操作](/apidoc/generic/simple.md)
+  - [分块文件操作](/apidoc/generic/block.md)
+  - [临时访问凭证](/apidoc/generic/temporary-access.md)
+- **认证服务**
+  - [用户相关](/apidoc/auth/user.md)
+  - [用户token相关](/apidoc/auth/token.md)
+  - [角色相关](/apidoc/auth/role.md)
+  - [权限相关](/apidoc/auth/permission.md)
+  - [平台账号相关](/apidoc/auth/account.md)
+  - [前端相关](/apidoc/auth/ext.md)
+- **依赖源扩展接口**
+  - [docker扩展接口](/apidoc/registry/docker.md)
+  - [npm扩展接口](/apidoc/registry/npm.md)
+  - [rpm扩展接口](/apidoc/registry/rpm.md)
+- **制品分析**
+  - [许可证扫描](/apidoc/scanner/license.md)
+  - [扫描器管理](/apidoc/scanner/scanner.md)
+  - [扫描](/apidoc/scanner/scan.md)
+  - [扫描报告](/apidoc/scanner/report.md)
+- **WebHook**
+  - [webhook接口](/apidoc/webhook/webhook.md)
+  - [webhook消息](/apidoc/webhook/payload.md)
+- **同步接口**
+  - [集群管理接口](/apidoc/replication/cluster-node.md)
+  - [集群同步接口](/apidoc/replication/replication.md)
+  - [分发接口](/apidoc/replication/remote-replication.md)
+  - [同步执行日志接口](/apidoc/replication/record.md)
+- **审计日志**
+  - [审计日志接口](/apidoc/log/log.md)

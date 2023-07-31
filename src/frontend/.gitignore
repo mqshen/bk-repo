@@ -1,0 +1,8 @@
+node_modules/
+frontend/*
+yarn-error.log
+.yarnrc
+/.vscode
+*/webpack_cache
+sprite_chunk.js
+sprite.svg

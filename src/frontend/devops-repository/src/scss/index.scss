@@ -1,0 +1,325 @@
+@import './conf';
+@import './reset';
+
+html,
+body {
+    height: 100%;
+	margin: 0;
+    padding: 0;
+    font-family: Microsoft Yahei,PingFang SC,Helvetica Neue,Arial,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--fontPrimaryColor);
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primaryColor);
+        &:hover {
+            color: var(--primaryWeightColor);
+        }
+    }
+}
+
+.hover-btn {
+    user-select: none;
+    cursor: pointer;
+    color: var(--fontPrimaryColor);
+    &.disabled {
+        color: var(--fontDisableColor);
+        cursor: not-allowed;
+    }
+    &:not(.disabled):hover {
+        color: var(--primaryColor);
+    }
+    &:not(.disabled).hover-danger:hover {
+        color: var(--dangerColor);
+    }
+}
+
+.cell svg.hover-btn {
+    display: inherit;
+}
+:is(.devops-icon, svg) {
+    font-size: 14px;
+    &.hover-btn {
+        padding: 5px;
+        border-radius: 2px;
+        color: var(--fontPrimaryColor);
+        &:not(.disabled):hover {
+            background-color: var(--bgHoverColor);
+        }
+    }
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-end-center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.flex-1 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+:focus {
+    outline: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--borderColor);
+    &:hover {
+        background-color: var(--borderWeightColor);
+    }
+}
+
+.repo-tag {
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+    color: var(--primaryColor);
+    background-color: var(--bgHoverLighterColor);
+    border: 1px solid transparent;
+    max-width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:before {
+        content: attr(data-name);
+    }
+    &.QUALITY_PASS,
+    &.SUCCESS {
+        color: var(--successColor);
+        background-color: var(--successBgColor);
+    }
+    &.STOP,
+    &.WARNING {
+        color: var(--warningColor);
+        background-color: var(--warningBgColor);
+    }
+    &.QUALITY_UNPASS,
+    &.FAILED{
+        color: var(--dangerColor);
+        background-color: #FFDDDD;
+    }
+    &.UN_QUALITY,
+    &.INIT
+    &.CANCEL  {
+        color: var(--fontSubsidiaryColor);
+        background-color: #EFF2F6; // 30% CBD5E0
+    }
+}
+
+.status-sign {
+    display: inline-flex;
+    align-items: center;
+    &.SUCCESS,
+    &.HEALTHY {
+        --signColor: var(--successColor);
+    }
+    &.UNHEALTHY,
+    &.HIGH {
+        --signColor: var(--warningColor);
+    }
+    &.FAILED,
+    &.CRITICAL {
+        --signColor: var(--dangerColor);
+    }
+    &.RUNNING,
+    &.MEDIUM {
+        --signColor: var(--primaryColor);
+    }
+    &.LOW {
+        --signColor: var(--fontSubsidiaryColor);
+    }
+    &:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--signColor);
+    }
+    &:after {
+        content: attr(data-name);
+        margin-left: 6px;
+    }
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+.w180 {
+    width: 180px !important;
+}
+
+.w250 {
+    width: 250px !important;
+}
+
+.w480 {
+    width: 480px !important;
+}
+
+.spin-icon {
+    animation: loading .8s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// hover下拉列表
+.operation-container {
+    .tippy-tooltip {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .operation-list {
+        .operation-item {
+            position: relative;
+            width: auto;
+            padding: 0 14px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: var(--fontPrimaryColor);
+            user-select: none;
+            cursor: pointer;
+            &.disabled {
+                color: var(--fontDisableColor);
+                cursor: not-allowed;
+            }
+            &:not(.disabled):hover {
+                color: var(--primaryWeightColor);
+                background-color: var(--bgHoverColor);
+            }
+        }
+    }
+}
+
+// 文件input默认隐藏
+input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+    &::-webkit-file-upload-button {
+        cursor: pointer;
+    }
+}
+
+// 内容块标题展示
+.display-block {
+    position: relative;
+    margin-top: 55px;
+    &:first-child {
+        margin-top: 35px;
+    }
+    &:before {
+        position: absolute;
+        top: -28px;
+        left: 0;
+        content: '';
+        width: 3px;
+        height: 12px;
+        background-color: var(--primaryColor);
+    }
+    &:after {
+        position: absolute;
+        top: -33px;
+        left: 10px;
+        content: attr(data-title);
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+// table中的svg图标，对齐文字并可以做到文字溢出省略
+.table-svg {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.form-tip {
+    margin-top: 3px;
+    font-size: 12px;
+    line-height: initial;
+    color: var(--fontSubsidiaryColor)
+}
+
+.bk-tab.page-tab {
+    .bk-tab-header {
+        background-image: none!important;
+        margin-bottom: 10px;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            bottom: -10px;
+            background-color: var(--bgWeightColor);
+        }
+    }
+}

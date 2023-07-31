@@ -1,0 +1,2 @@
+spring.application.name: composer
+server.port: 25808
